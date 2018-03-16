@@ -1,10 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const mongoose = require("mongoose");
 const path = require("path");
+// const mongoose = require("mongoose");
 // const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3002;
+
+// const api = require("./server/routes/api");
+// app.use(api, "/api")
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -13,8 +16,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "/dist")));
 
 // Angular path location strategy
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname + "/dist/index.html")); 
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "/dist/index.html")); 
 })
 // Set up promises with mongoose
 // mongoose.Promise = global.Promise;
