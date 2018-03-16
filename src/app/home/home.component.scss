@@ -1,0 +1,228 @@
+//sass declarations start ==========
+$pnt: pointer;
+$fadedBrown: hsla(199, 60%, 55%, 0.459);
+$fontColor: rgba(96, 71, 209, 0.459);
+
+@mixin grid($flex) {
+  @if $flex {
+    @include flex;
+  } @else {
+    display: block;
+  }
+}
+
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+//
+// Pass in any number of transitions
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append(
+      $unfoldedTransitions,
+      unfoldTransition($transition),
+      comma
+    );
+  }
+
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition($transition) {
+  // Default values
+  $property: all;
+  $duration: 0.5s;
+  $easing: null; // Browser default is ease, which is what we want
+  $delay: null; // Browser default is 0, which is what we want
+  $defaultProperties: (
+    $property,
+    $duration,
+    $easing,
+    $delay
+  );
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i);
+    } @else {
+      $p: nth($defaultProperties, $i);
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+//sass declaration end ==========
+
+.container {
+  display: grid;
+  grid-template-columns: 50%;
+}
+.col {
+  padding: 0.5em 0.5em;
+}
+.flexEnd {
+  align-self: flex-start;
+}
+
+.color-dark {
+  // flex-wrap: nowrap;
+  display: flex;
+}
+
+.color-dark2 {
+  @extend .color-dark;
+}
+.color-light {
+}
+input.txt {
+  border: 0;
+  padding: 1em;
+  width: auto;
+  margin-bottom: 2em;
+  cursor: $pnt;
+}
+.life-container {
+  font-size: 0.7em;
+  // background-color: #19c7c760;
+  width: auto;
+  font-weight: bold;
+  cursor: $pnt;
+}
+
+.todos {
+  display: none;
+}
+.todos {
+  display: block;
+}
+
+@mixin radius {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.menu-circle {
+  display: inline-block;
+  width: 50px;
+  height: 60px;
+  background-color:burlywood;
+    margin-left: 2em;
+
+  @include radius;
+  border-radius: 16%;
+  // margin: auto;
+  transition-timing-function: ease-in;
+  transition: 2s;
+}
+.svg-inline--fa {
+  position: relative;
+  left: 1em;
+  display: block;
+  bottom: -1em;
+}
+//blobs
+.menu-circle2,
+.menu-circle3,
+.menu-circle4,
+.menu-circle5 {
+  @extend .menu-circle;
+}
+
+.menu-circle:hover,
+.svg-inline--fa:hover {
+  background-color: #d61111;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  @include radius;
+  @include transition(
+    background-color 2s,
+    height 1s,
+    width 1s ease-in,
+    transition 0.2s
+  );
+}
+
+// using keyframe animation
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.somethingAwesome {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  padding: 10%;
+
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  transition: 5s;
+}
+.somethingAwesome:hover {
+  color: $fontColor;
+  letter-spacing: 1em;
+
+  @include transition(letter-spacing 1s ease-out);
+}
+
+.menu-item {
+  text-align: center;
+}
+
+//start video styles
+
+.fullscreen-bg {
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.webmm")
+      center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}

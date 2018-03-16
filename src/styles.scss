@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Cinzel:300,700");
+
+// $BG-Color: lightblue;
+// $Font-color: rgb(238, 121, 121);
+$fontColor:rgba(8, 50, 105, 0.911);
+
+
+
+body {
+  // background: $BG-Color;
+  padding: 3em;
+  font-family: "'Cinzel', serif";
+  color: $fontColor;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+ul li { //this actually creates a navbar style for `home` `about` links
+  display: inline;
+  margin-right: 30px;
+}
+ul li  {
+  font-size: 1.5em;
+  color:$fontColor;
+
+}
+a {
+  color: #ca3b28c5;
+  text-decoration: none;
+}

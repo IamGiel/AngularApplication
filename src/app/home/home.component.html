@@ -1,0 +1,58 @@
+<div class="container upperBoxes">
+  <div class="container color-dark">
+    <div class="col">
+
+
+      <div class="menu-circle">
+        <i class="fab fa-stack-overflow"></i>
+      </div>
+      <div class="menu-circle">
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <div class="menu-circle">
+        <i class="fab fa-github-square"></i>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="menu-item">
+  <a href="#">
+    <span class="somethingAwesome">SOMETHING AWESOME</span>
+  </a>
+</div>
+<!-- the animation triggers here: [@goals]="goals.length"-->
+<div class="container color-light" [@goals]="goals.length">
+  <div class="col">
+    <p class="sm">Leave me note &#9749; ({{itemCount}})</p>
+    <form>
+      <!-- adding >>> [(ngModel)]="goalTxt" <<< next line for `two way binding` -->
+      <input type="text" class="txt" name="item" placeholder="life goals" [(ngModel)]="goalTxt">
+      <!-- <input type="text" class="txt" name="item" [placeholder]=goalTxt> -->
+
+      <br>
+      <!-- <span>{{ goalTxt }}</span> -->
+      <br>
+      <!-- adding an event listener to button  >>> (click)="addItem()" <<< -->
+      <input type="submit" class="btn" name="item" [value]=btn (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <!-- ngFor will iterate to goals array -->
+    <p class="life-container" *ngFor="let goals of goals; let i = index" (click)="removeItem(i)">{{goals}}</p>
+  </div>
+  <div class="fullscreen-bg">
+    <video loop muted autoplay class="fullscreen-bg__video">
+      <source src="../assets/images/BlueParticles.mp4"
+        type="video/webm">
+    </video>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div @videoIn>
+  <p class="videoIn">
+    <a href="" (click)="sendMeHome()">
+      My purpose is to take you back when you <strong>Click Me</strong>.
+    </a>
+  </p>
+
+  <ul>
+    <li *ngFor="let goal of goals">{{goal}}</li>
+  </ul>
+
+</div>
+
+<div class="fullscreen-bg" @videoIn>
+  <video loop muted autoplay class="fullscreen-bg__video videoIn">
+    <source src="../assets/images/spiritedAway.mp4" type="video/webm">
+  </video>
+</div>
