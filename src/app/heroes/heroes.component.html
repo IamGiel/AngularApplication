@@ -1,14 +1,19 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Data Binding</h1>
-    <p class="lead">Below is an art work of data binding, where components handles functionality and controls the DOM. Dual binding also
-      is at work as both DOM and Component talks to each other and creates changes as user interact with the page.</p>
-      <p class="lead">
-
-        The buttons are controlling the images using property binding, another one way binding.  The button tag uses an event listener (on click) and calls a function declared
-        inside the component.ts file.
-
-      </p>
+    <p class="lead">Below is an art work of data binding, where components handles functionality and controls the DOM. Two-way binding also
+      is at work as both DOM and Component talks to each other and creates changes as user interact with the page. This is
+      demonstrated by the input field.
+    </p>
+    <p class="lead">
+      The buttons are controlling the images using property binding, another one way binding. The button tag uses an event listener
+      (on click) and calls a function declared inside the component.ts file.
+    </p>
+    <p>
+      (click) Handlers are implemented to listen to changes and are defined with a function that hides the other button via boolean.
+      Moreover, we have used structural directives *ngIf (for switching a boolean from true to false and vice versa) and
+      *ngFor (looping through array defined in the component).
+    </p>
   </div>
 </div>
 
@@ -17,39 +22,59 @@
 <div class="row">
   <div class="col-4">
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{imageHappy1}}" alt="Card image cap">
+      <img class="card-img-top" src="{{imageHappy1}}" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">SpongeBob</h5>
-        <ul>
-          <li>{{skill}}</li>
+        <h5 class="card-title">{{player1}}</h5>
+        <hr>
+        <input type="text" class="form-control" [(ngModel)]="characterInfo1" placeholder="{{player1}} is...">
+        <br>
+        <ul *ngFor="let skill of skills">
+          <li>-{{skill}}</li>
         </ul>
-        <input type="text" class="form-control" [(ngModel)]="characterInfo1" placeholder="character info">
-        <button type="submit" class="btn btn-primary" (click)="addInfo1()">add-info</button>
+        <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo1" (click)="addInfo1()">submit</button>
         <p class="card-text">Name above is displayed via one way binding using `interpolation`. Check the code under hero.component.ts and hero.component.html</p>
-        <button href="#" class="btn btn-primary" [disabled]="btnDisabled" (click)="player1Info()">Angrify</button>
+        <button href="#" class="btn btn-danger" (click)="normalize()" *ngIf="showBtnAnger">Angrify</button>
+        <button href="#" class="btn btn-primary" (click)="happify()" *ngIf="showBtn">Happify</button>
       </div>
     </div>
   </div>
 
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{imageHappy2}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{player2}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button href="#" class="btn btn-primary" [disabled]="btnDisabled" (click)="player2Info()">Angrify</button>
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{imageHappy2}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{player2}}</h5>
+          <hr>
+          <input type="text" class="form-control" [(ngModel)]="characterInfo2" placeholder="{{player2}} is...">
+          <br>
+          <ul *ngFor="let trait of traits">
+            <li>-{{trait}}</li>
+          </ul>
+          <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo2" (click)="addInfo2()">submit</button>
+          <p class="card-text">Name above is displayed via one way binding using `interpolation`. Check the code under hero.component.ts and hero.component.html</p>
+          <button href="#" class="btn btn-danger" (click)="normalize2()" *ngIf="showBtnAnger2">Angrify</button>
+          <button href="#" class="btn btn-primary" (click)="happify2()" *ngIf="showBtn2">Happify</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{imageHappy3}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{player3}}</h5><!-- interpolation -->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button href="#" class="btn btn-primary" [disabled]="btnDisabled" (click)="player3Info()">Angrify</button>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{imageHappy3}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{player3}}</h5>
+            <hr>
+            <input type="text" class="form-control" [(ngModel)]="characterInfo3" placeholder="{{player3}} is...">
+            <br>
+            <ul *ngFor="let thing of things">
+              <li>-{{thing}}</li>
+            </ul>
+            <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo3" (click)="addInfo3()">submit</button>
+            <p class="card-text">Name above is displayed via one way binding using `interpolation`. Check the code under hero.component.ts and
+              hero.component.html</p>
+            <button href="#" class="btn btn-danger" (click)="normalize3()" *ngIf="showBtnAnger3">Angrify</button>
+            <button href="#" class="btn btn-primary" (click)="happify3()" *ngIf="showBtn3">Happify</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>

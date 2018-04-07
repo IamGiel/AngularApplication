@@ -31,19 +31,78 @@ export class HeroesComponent implements OnInit {
   imageAngry3 = "../assets/images/angryPat.jpeg";
   showHide = "hidden";
 
-  skill = "swordsman";
-  characterInfo1 = null;
+  skills = [];
+  traits = [];
+  things = [];
+
+  characterInfo1 = "";
+  characterInfo2 = "";
+  characterInfo3 = "";
+  showBtn = false;
+  showBtnAnger = true;
+
+  showBtn2 = false;
+  showBtnAnger2 = true;
+
+  showBtn3 = false;
+  showBtnAnger3 = true;
 
   btnDisabled = false; //property binding using [this]=value
 
-  addInfo1(){
-    this.skill = this.characterInfo1;
-  }
-
-  player1Info() {
+  normalize() {
     //logic here
     this.imageHappy1 = this.imageAngry1;
+    this.showBtn = true;
+    this.showBtnAnger = false;
   }
+  happify() {
+    //logic here
+    this.imageHappy1 = "../assets/images/spngeBob.jpeg";
+    this.showBtn = false;
+    this.showBtnAnger = true;
+  }
+  //for second card
+  normalize2() {
+    //logic here
+    this.imageHappy2 = this.imageAngry2;
+    this.showBtn2 = true;
+    this.showBtnAnger2 = false;
+  }
+  happify2() {
+    //logic here
+    this.imageHappy2 = "../assets/images/squidWord.jpeg";
+    this.showBtn2 = false;
+    this.showBtnAnger2 = true;
+  }
+  //third card
+  normalize3() {
+    //logic here
+    this.imageHappy3 = this.imageAngry3;
+    this.showBtn3 = true;
+    this.showBtnAnger3 = false;
+  }
+  happify3() {
+    //logic here
+    this.imageHappy3 = "../assets/images/patrick.jpeg";
+    this.showBtn3 = false;
+    this.showBtnAnger3 = true;
+  }
+
+  //add info logic here
+  addInfo1() {
+    this.skills.push(this.characterInfo1);
+    this.characterInfo1 = "";
+  }
+  addInfo2() {
+    this.traits.push(this.characterInfo2);
+    this.characterInfo2 = "";
+  }
+  addInfo3() {
+    this.things.push(this. characterInfo3);
+    this.characterInfo3 = "";
+  }
+ 
+
   player2Info() {
     //logic here
     this.imageHappy2 = this.imageAngry2;
