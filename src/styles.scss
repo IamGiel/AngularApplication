@@ -1,34 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css?family=Cinzel:300,700");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,700");
 
 // $BG-Color: lightblue;
 // $Font-color: rgb(238, 121, 121);
-$fontColor:rgba(8, 50, 105, 0.911);
-
-
+$fontColor: rgba(8, 50, 105, 0.911);
 
 body {
   // background: $BG-Color;
-  padding: 3em;
-  font-family: "'Cinzel', serif";
+  padding: 1em;
+  font-family: "Work Sans", sans-serif;
   color: $fontColor;
   font-weight: bold;
 }
 ul {
   list-style-type: none;
-  margin: 0 0 2em 0;
+  margin: 0em;
   padding: 0;
+  position: relative;
+  // float: left;
+  // display: inline-block;
+  left: 0%;
+  // padding-bottom: 1em;
 }
-ul li { //this actually creates a navbar style for `home` `about` links
+ li {
+  //this actually creates a navbar style for `home` `about` links
   display: inline;
   margin-right: 30px;
-}
-ul li  {
-  font-size: 1.5em;
-  color:$fontColor;
-
+  font-size: 1em;
+  color: $fontColor;
 }
 a {
-  color: #ca3b28c5;
+  color: hsla(202, 67%, 47%, 0.773);
   text-decoration: none;
 }

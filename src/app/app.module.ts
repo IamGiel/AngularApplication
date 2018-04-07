@@ -6,11 +6,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
-import { LogInComponent } from "./log-in/log-in.component";
 import { DataService } from "./data.service";
+import { HeroesComponent } from './heroes/heroes.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, LogInComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, HeroesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

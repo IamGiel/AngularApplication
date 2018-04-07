@@ -1,23 +1,13 @@
-<div class="container upperBoxes">
+<!-- <div class="container upperBoxes">
   <div class="container color-dark">
     <div class="col">
-
-
-      <div class="menu-circle">
-        <i class="fab fa-stack-overflow"></i>
-      </div>
-      <div class="menu-circle">
-        <i class="fab fa-linkedin"></i>
-      </div>
-      <div class="menu-circle">
-        <i class="fab fa-github-square"></i>
-      </div>
-
+      <div class="navbar-header">
+        <i class="fab fa-about"></i>
       </div>
     </div>
   </div>
+</div> -->
 
-<hr>
 
 <div class="resumeContainer">
   <iframe src="https://drive.google.com/file/d/1Jtc5CJXVwnxr8ytQ-N0YoC8VLjo9I5Gr/preview"></iframe>
@@ -40,12 +30,8 @@
     <p class="sm">Leave me note &#9749; ({{itemCount}})</p>
     <form>
       <!-- adding >>> [(ngModel)]="goalTxt" <<< next line for `two way binding` -->
-      <input type="text" class="txt" name="item" placeholder="life goals" [(ngModel)]="goalTxt">
-      <!-- <input type="text" class="txt" name="item" [placeholder]=goalTxt> -->
-
-      <br>
-      <!-- <span>{{ goalTxt }}</span> -->
-      <br>
+      <label for="">Here </label>
+      <input type="text" class="txt" name="item" [placeholder]=gelsMemo [(ngModel)]="goalTxt">
       <!-- adding an event listener to button  >>> (click)="addItem()" <<< -->
       <input type="submit" class="btn" name="item" [value]=btn (click)="addItem()">
     </form>
@@ -56,8 +42,7 @@
   </div>
   <div class="fullscreen-bg">
     <video loop muted autoplay class="fullscreen-bg__video">
-      <source src="../assets/images/BlueParticles.mp4"
-        type="video/webm">
+      <source src="../assets/images/BlueParticles.mp4" type="video/webm">
     </video>
   </div>
 </div>

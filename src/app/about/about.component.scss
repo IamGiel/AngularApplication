@@ -12,9 +12,9 @@
 }
 
 .fullscreen-bg__video {
-  position: absolute;
+  position: relative;
   top: -2em;
-  width: 135%;
-  left: -13em;
-  height: 106%;
+  width: 100%;
+  left: 0%;
+  height: 100%;
 }

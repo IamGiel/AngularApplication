@@ -26,6 +26,7 @@ import {
 export class HomeComponent implements OnInit {
   itemCount: number;
   btn: string = "Add to the list here...";
+  gelsMemo: string = "suggest here..."
   goalTxt: string = "I welcome thoughts.."; //double binding sample
   //defining an array to use  in event listener example
   goals = ["Work on adding chat capability"];
