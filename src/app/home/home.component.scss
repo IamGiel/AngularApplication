@@ -125,15 +125,8 @@ input.txt {
   display: block;
   bottom: -1em;
 }
-//blobs
-.menu-circle2,
-.menu-circle3,
-.menu-circle4,
-.menu-circle5 {
-  @extend .menu-circle;
-}
 
-.menu-circle:hover,
+
 .svg-inline--fa:hover {
   background-color: #d61111;
   height: 100px;
@@ -200,6 +193,11 @@ input.txt {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+iframe{
+  height: 40em;
+  width:95%;
 }
 
 @media (min-aspect-ratio: 16/9) {

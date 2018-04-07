@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   constructor(private _data: DataService) {}
   // similar to REACT: this line is a LIFE CYCLE HOOK that renders onload (in REACT: componentDidMount())
   ngOnInit() {
-    this._data.goal.subscribe(res => (this.goals = res));
+    this._data.goalie.subscribe(res => (this.goals = res));
     this.itemCount = this.goals.length;
     this._data.changeGoal(this.goals);
   }
