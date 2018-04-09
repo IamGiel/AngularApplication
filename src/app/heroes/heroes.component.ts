@@ -2,22 +2,15 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { DataService } from "../data.service";
+import { heroService } from "./heroes.service";
 
 @Component({
   selector: "app-heroes",
   templateUrl: "./heroes.component.html",
-  styleUrls: ["./heroes.component.scss"]
+  styleUrls: ["./heroes.component.scss"],
+  providers: [heroService]
 })
 export class HeroesComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private _data: DataService
-  ) {
-    this.route.params.subscribe(res =>
-      console.log("this is activated route: ", res.id)
-    );
-  }
   //here is where we set-up our bindings
   player1 = "SpongeBob"; //one-way binding using {{player1}}
   player2 = "SquidWord";
@@ -31,9 +24,9 @@ export class HeroesComponent implements OnInit {
   imageAngry3 = "../assets/images/angryPat.jpeg";
   showHide = "hidden";
 
-  skills = [];
-  traits = [];
-  things = [];
+  public getSkills = [];
+  public getTraits = []; //trying services
+  public getThings = [];
 
   characterInfo1 = "";
   characterInfo2 = "";
@@ -48,6 +41,25 @@ export class HeroesComponent implements OnInit {
   showBtnAnger3 = true;
 
   btnDisabled = false; //property binding using [this]=value
+
+  constructor(
+    //here we add our service injections
+    private route: ActivatedRoute,
+    private router: Router,
+    private _data: DataService,
+    private _heroService: heroService
+  ) {
+    this.route.params.subscribe(res =>
+      console.log("this is activated route: ", res.id)
+    );
+    // this.skills = this.gelsAjax.skills;
+  }
+
+  ngOnInit() {
+    this.getTraits = this._heroService.getTraits();
+    this.getSkills = this._heroService.getSkills();
+    this.getThings = this._heroService.getThings();
+  }
 
   normalize() {
     //logic here
@@ -90,18 +102,17 @@ export class HeroesComponent implements OnInit {
 
   //add info logic here
   addInfo1() {
-    this.skills.push(this.characterInfo1);
+    this.getSkills.push(this.characterInfo1);
     this.characterInfo1 = "";
   }
   addInfo2() {
-    this.traits.push(this.characterInfo2);
+    this.getTraits.push(this.characterInfo2); //using services
     this.characterInfo2 = "";
   }
   addInfo3() {
-    this.things.push(this. characterInfo3);
+    this.getThings.push(this.characterInfo3);
     this.characterInfo3 = "";
   }
- 
 
   player2Info() {
     //logic here
@@ -111,6 +122,4 @@ export class HeroesComponent implements OnInit {
     //logic here
     this.imageHappy3 = this.imageAngry3;
   }
-
-  ngOnInit() {}
 }

@@ -8,6 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { DataService } from "./data.service";
 import { HeroesComponent } from './heroes/heroes.component';
+import { heroService } from "./heroes/heroes.service";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, HeroesComponent],
@@ -18,7 +19,7 @@ import { HeroesComponent } from './heroes/heroes.component';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [DataService],
+  providers: [DataService, heroService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -29,16 +29,18 @@
         <input type="text" class="form-control" [(ngModel)]="characterInfo1" placeholder="{{player1}} is...">
         <br>
         <!-- use of structural directive using *ngFor -->
-        <ul *ngFor="let skill of skills">
+        <ul *ngFor="let skill of getSkills">
           <!-- use of attribute directives using [ngClass] -->
           <li [ngClass]="{'text-warning': skill === 'funny'}">-{{skill}}</li>
         </ul>
+        <hr>
         <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo1" (click)="addInfo1()">submit</button>
         <p class="card-text">
-          
           Name above is displayed via one way binding using `interpolation`. Check the code under hero.component.ts and hero.component.html.
-          The `angrify` button will change the image.  This is done with two-way binding [(ngModel)].
-
+        </p>
+        <hr>
+        <p>
+          The `angrify` button will change the image. This is done with two-way binding [(ngModel)].
         </p>
         <button href="#" class="btn btn-danger" (click)="normalize()" *ngIf="showBtnAnger">Angrify</button>
         <button href="#" class="btn btn-primary" (click)="happify()" *ngIf="showBtn">Happify</button>
@@ -54,15 +56,33 @@
         <hr>
         <input type="text" class="form-control" [(ngModel)]="characterInfo2" placeholder="{{player2}} is...">
         <br>
-        <ul *ngFor="let trait of traits">
-          <li>-{{trait}}</li>
+        <ul *ngFor="let trait of getTraits">
+          <!-- basically here, trait is defined and is iterating through getTraits [] -->
+          <li [ngStyle]="{'color': trait === 'grumpy' ? '#9ecbbc' : 'black' }">-{{trait}}</li>
         </ul>
+        <hr>
         <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo2" (click)="addInfo2()">submit</button>
         <p class="card-text">
-
-          The input field is using `[(ngModel)]="variable"` then the variable is used in the component.ts to print the user input in li tag.
-
+          The input field is using `[(ngModel)]="variable"` then the variable is used in the component.ts to print the user input in
+          li tag.
         </p>
+        <hr>
+        <p>
+          The list of traits for SquidWord is done through `service` thats sole purpose is to list traits. To do this, first create
+          a service file using CLI or manually. Then, in the service file, define your class that will have a method that
+          sole purpose is to have an array of values. Next, in the app.module file, you need to import this and declare it
+          in the provider metadata. You can have multiple providers. So, place this class name inside an array when declaring
+          it as a provider. Go back to the component files that need access to this service. Import it on the top of the
+          file. Then, define the variable that will instantiate the class inside ngOnInit() life-cycle hook.
+        </p>
+        <hr>
+        <p>
+          The font color here, is changed using attribute binding [ngStyle]. SpongeBobs "funny" trait is changed to yellow using [ngClass]
+          for bootstrap (text-warning).
+        </p>
+
+
+
         <button href="#" class="btn btn-danger" (click)="normalize2()" *ngIf="showBtnAnger2">Angrify</button>
         <button href="#" class="btn btn-primary" (click)="happify2()" *ngIf="showBtn2">Happify</button>
       </div>
@@ -77,13 +97,15 @@
         <hr>
         <input type="text" class="form-control" [(ngModel)]="characterInfo3" placeholder="{{player3}} is...">
         <br>
-        <ul *ngFor="let thing of things">
+        <ul *ngFor="let thing of getThings">
           <li>-{{thing}}</li>
         </ul>
+        <hr>
         <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo3" (click)="addInfo3()">submit</button>
         <p class="card-text">
           There are two types of directives.
-          <u>Structural</u> and <u>attribute directives.</u>
+          <u>Structural</u> and
+          <u>attribute directives.</u>
           <br> Structural directives are ones that changes the structure of the DOM (e.g adds or changes texts, images, delete
           divs, list values from an array etc..). `*ngIf="variable"` is an example defined in the DOM and the variable manipulated
           through javascript logic done in the component. `*ngFor="let var of vars"` where var is variable and vars = an
