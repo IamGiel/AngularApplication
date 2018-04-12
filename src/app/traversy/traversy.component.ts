@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { form }
 
 @Component({
   selector: "app-traversy",
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ["./traversy.component.scss"]
 })
 export class TraversyComponent implements OnInit {
-  interpolation: string = "John Doe";
+  interpolation: string;
   age: any = new Date().getFullYear();
+  email: any = "Lfagel84@gmail.com";
   address: Address; //use interface for nested properties
   hobbies: any[];
   sayHello: string;
@@ -24,6 +26,7 @@ export class TraversyComponent implements OnInit {
     this.interpolation = "Gel";
     console.log("use javascript logic for getting age");
     this.age = this.age - 1984;
+    this.email = "testing@mail.com";
     this.address = {
       street: "124 Darley Dale Loop",
       city: "Apex",
@@ -49,6 +52,7 @@ export class TraversyComponent implements OnInit {
   }
   addHobby(addtoHobbyList) {
     this.hobbies.unshift(addtoHobbyList);
+    this.addtoHobbyList = "";
   }
   deleteHobby(addtoHobbyList) {
     for (let i = 0; i < addtoHobbyList.length; i++) {

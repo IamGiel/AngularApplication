@@ -16,8 +16,7 @@ import { TraversyComponent } from './traversy/traversy.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //double binding
-    FormsModule,
+    FormsModule, //double binding
     BrowserAnimationsModule
   ],
   providers: [DataService, heroService],
