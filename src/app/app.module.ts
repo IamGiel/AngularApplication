@@ -9,9 +9,10 @@ import { AboutComponent } from "./about/about.component";
 import { DataService } from "./data.service";
 import { HeroesComponent } from './heroes/heroes.component';
 import { heroService } from "./heroes/heroes.service";
+import { TraversyComponent } from './traversy/traversy.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, HeroesComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, HeroesComponent, TraversyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

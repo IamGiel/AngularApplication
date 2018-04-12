@@ -10,6 +10,6 @@ export class heroService {
     return ["funny", "friendly"];
   }
   getThings(){
-    return ["Religious", "Honest", "Loyal", "Devoted", "Loving", "Kind", "Sincere", "Ambitious", "Satisfied", "Happy", "Faithful", "Patient", "Determined", "Persistent"];
+    return ["Religious", "Honest", "Loyal", "Devoted", "Loving", "Kind", "Sincere", "super friendly", "Satisfied", "Happy", "Faithful", "Patient", "Determined", "Persistent"];
   };
 }

@@ -98,7 +98,7 @@
         <input type="text" class="form-control" [(ngModel)]="characterInfo3" placeholder="{{player3}} is...">
         <br>
         <ul *ngFor="let thing of getThings">
-          <li>-{{thing}}</li>
+          <li [ngStyle]="{'color': thing === 'super friendly' ? '#f9542d' : '#1f4576'}">-{{thing}}</li>
         </ul>
         <hr>
         <button type="sumbit" class="btn btn-primary" [disabled]="!characterInfo3" (click)="addInfo3()">submit</button>
