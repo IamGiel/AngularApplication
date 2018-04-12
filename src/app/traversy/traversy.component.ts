@@ -10,6 +10,9 @@ export class TraversyComponent implements OnInit {
   age: any = new Date().getFullYear();
   address: Address; //use interface for nested properties
   hobbies:any[];
+  sayHello:string;
+  visitors:number = 0;
+
   constructor() {
     console.log("constructor is initialized");
   }
@@ -26,8 +29,16 @@ export class TraversyComponent implements OnInit {
       state: "NC"
     };
     this.hobbies = ["Play tennis", "basketball", "develop web programming/coding skills", "learning new technology", "work out", "enjoy outdoors", "travel on a regular basis"];
-
   }
+
+  //outside the ngOnInit Life-cycle hook
+  //define out button handler called flashMessage()
+    flashMessage(){
+      console.log("button listens, so it works");
+      this.sayHello = "Hello, Gel!";
+      this.visitors++;
+
+    }
 }
 
 interface Address {//you can set this on another file, and import it to multiple files if needed
