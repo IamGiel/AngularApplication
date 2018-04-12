@@ -7,9 +7,13 @@ You can geolocate me at ~ google map here soon
 
 <div>
   Life is good, I like to...
-  <ul *ngFor="let hobby of hobbies">
-    <li>-{{hobby}}</li>
+  <ul *ngFor="let hobby of hobbies; let i = index">
+    <li>-{{hobby}} <button (click)="deleteHobby(hobby)">X</button></li>
   </ul>
+  <form (submit)="addHobby(hobby.value)">
+    <input type="text" placeholder="add to my list" #hobby>{{addtoHobbyList}}
+    <button>add</button>
+  </form>
 </div>
 
 <hr>

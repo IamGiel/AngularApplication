@@ -9,9 +9,9 @@ export class TraversyComponent implements OnInit {
   interpolation: string = "John Doe";
   age: any = new Date().getFullYear();
   address: Address; //use interface for nested properties
-  hobbies:any[];
-  sayHello:string;
-  visitors:number = 0;
+  hobbies: any[];
+  sayHello: string;
+  visitors: number = 0;
 
   constructor() {
     console.log("constructor is initialized");
@@ -21,24 +21,41 @@ export class TraversyComponent implements OnInit {
     console.log("ngOnInit is initialized, changed the name of John Doe to Gel");
     console.log("typescript strictly tells us of its `type`");
     this.interpolation = "Gel";
-    console.log("use javascript logic for getting age")
+    console.log("use javascript logic for getting age");
     this.age = this.age - 1984;
     this.address = {
       street: "124 Darley Dale Loop",
       city: "Apex",
       state: "NC"
     };
-    this.hobbies = ["Play tennis", "basketball", "develop web programming/coding skills", "learning new technology", "work out", "enjoy outdoors", "travel on a regular basis"];
+    this.hobbies = [
+      "Play tennis",
+      "basketball",
+      "develop web programming/coding skills",
+      "learning new technology",
+      "work out",
+      "enjoy outdoors",
+      "travel on a regular basis"
+    ];
   }
 
   //outside the ngOnInit Life-cycle hook
   //define out button handler called flashMessage()
-    flashMessage(){
-      console.log("button listens, so it works");
-      this.sayHello = "Hello, Gel!";
-      this.visitors++;
-
+  flashMessage() {
+    console.log("button listens, so it works");
+    this.sayHello = "Hello, Gel!";
+    this.visitors++;
+  }
+  addHobby(addtoHobbyList) {
+    this.hobbies.unshift(addtoHobbyList);
+  }
+  deleteHobby(addtoHobbyList) {
+    for (let i = 0; i < addtoHobbyList.length; i++) {
+      if (this.hobbies[i] == addtoHobbyList) {
+        this.hobbies.splice(i, 1);
+      }
     }
+  }
 }
 
 interface Address {//you can set this on another file, and import it to multiple files if needed
