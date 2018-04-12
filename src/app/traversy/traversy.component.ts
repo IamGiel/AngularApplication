@@ -12,6 +12,7 @@ export class TraversyComponent implements OnInit {
   hobbies: any[];
   sayHello: string;
   visitors: number = 0;
+  addtoHobbyList:string;
 
   constructor() {
     console.log("constructor is initialized");
