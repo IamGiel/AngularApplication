@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ["./traversy.component.scss"]
 })
 export class TraversyComponent implements OnInit {
-  interpolation: string;
+  interpolation: string = "";
   age: any = new Date().getFullYear();
   email: any = "Lfagel84@gmail.com";
   address: Address; //use interface for nested properties
@@ -23,10 +23,10 @@ export class TraversyComponent implements OnInit {
   ngOnInit() {
     console.log("ngOnInit is initialized, changed the name of John Doe to Gel");
     console.log("typescript strictly tells us of its `type`");
-    this.interpolation = "Gel";
+    this.interpolation = "";
     console.log("use javascript logic for getting age");
     this.age = this.age - 1984;
-    this.email = "testing@mail.com";
+    this.email = "Lfagel84@gmail.com";
     this.address = {
       street: "124 Darley Dale Loop",
       city: "Apex",

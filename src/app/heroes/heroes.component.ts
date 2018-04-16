@@ -95,7 +95,7 @@ export class HeroesComponent implements OnInit {
   }
   happify3() {
     //logic here
-    this.imageHappy3 = "../assets/images/patrick.jpeg";
+    this.imageHappy3 = "../assets/images/patrick.png";
     this.showBtn3 = false;
     this.showBtnAnger3 = true;
   }

@@ -2,70 +2,85 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Repetition Is the Greatest Trainer of all...</h1>
-    <p class="lead">Below, Ill add a bootstrap templating but the main focus is the logic and use of the new Angular5 directives (structural and attribute binding). The use of interface (separating properties from an object variable for DRY coding) is at work.
+    <p class="lead">Below, Ill add a bootstrap templating but the main focus is the logic and use of the new Angular5 directives (structural
+      and attribute binding). The use of interface (separating properties from an object variable for DRY coding) is at work.
     </p>
     <p class="lead">
-      We will use service as an API storage that will be redistributed.  We will be using jsonplaceholder.typicode as a tool to get our endpoint and get sample json data to mimic pulling API from a library.  We will also repeat importing @angular modules to appModule, its decorator and its metadata.
+      We will use service as an API storage that will be redistributed. We will be using jsonplaceholder.typicode as a tool to
+      get our endpoint and get sample json data to mimic pulling API from a library. We will also repeat importing @angular
+      modules to appModule, its decorator and its metadata.
     </p>
     <p>
-    All the back ticks are signifying rendering using ngOnInit life-cycle hooks calling typescript variables and logic that creates them.
+      All the back ticks are signifying rendering using ngOnInit life-cycle hooks calling typescript variables and logic that creates
+      them.
     </p>
   </div>
 </div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+      <h3>My name's `{{interpolation}}`</h3>
+      <br>
+      Im a millenial, 1984 so, I am `{{age}}` on November.
+      <br> Connect with me at: `{{email}}`
+      <br>  `~ google map here soon ~`
+      <br>{{address.street}} {{address.city}} {{address.state}}
+    </div>
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+      <div>
+        Life is good, I like to...
+        <ul *ngFor="let hobby of hobbies; let i = index">
+          <li>-`{{hobby}}`
+            <button (click)="deleteHobby(hobby)">X</button>
+          </li>
+        </ul>
+        <form (submit)="addHobby(hobby.value)">
+          <!-- #hobby -->
+          <input type="text" placeholder="add to my list" #hobby>{{addtoHobbyList}}
+          <button>add</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-<h3>My name's `{{interpolation}}`</h3>
-<h4>Im a millenial, 1984 so, I am `{{age}}` on November.
-  <br>
-  Connect with me at: `{{email}}`
-  <br>
-You can geolocate me at `~ google map here soon ~`
-<br>{{address.street}} {{address.city}} {{address.state}}
+  <hr>
 
-<div>
-  Life is good, I like to...
-  <ul *ngFor="let hobby of hobbies; let i = index">
-    <li>-`{{hobby}}` <button (click)="deleteHobby(hobby)">X</button></li>
-  </ul>
-  <form (submit)="addHobby(hobby.value)"><!-- #hobby -->
-    <input type="text" placeholder="add to my list" #hobby>{{addtoHobbyList}}
-    <button>add</button>
+  <form>
+    <div>
+      <Label for="interpolation">Name: </Label>
+      <input type="text" ([ngModel])="madness" placeholder="{{interpolation}}">
+      <span>{{madness}}</span>
+    </div>
+    <div>
+      <Label for="age">Age: </Label>
+      <input type="number" ([ngModel])="age" name="age">
+    </div>
+    <div>
+      <Label for="email">E-mail: </Label>
+      <input type="text" ([ngModel])="email" name="email">
+    </div>
+    <div>
+      <Label for="street">street: </Label>
+      <input type="text">
+    </div>
+    <div>
+      <Label for="state">State: </Label>
+      <input type="text">
+    </div>
+    <div>
+      <Label for="zipcode">Zipcode: </Label>
+      <input type="text">
+    </div>
   </form>
+
+  <hr>
+
+  <div>
+    Click here to say hello! `
+    <button (click)="flashMessage()">hello!</button>`
+    <h4>`{{sayHello}}`
+      <span class="badge">`{{visitors}}`</span>
+    </h4>
+  </div>
 </div>
-<hr>
-
-<form>
-  <div>
-    <Label for="interpolation">Name: </Label>
-    <input type="text" ([ngModel])="interpolation" placeholder="{{interpolation}}">
-  </div>
-  <div>
-    <Label for="age">Age: </Label>
-    <input type="number" ([ngModel])="age" name="age">
-  </div>
-  <div>
-    <Label for="email">E-mail: </Label>
-    <input type="text" ([ngModel])="email" name="email">
-  </div>
-  <div>
-    <Label for="street">street: </Label>
-    <input type="text">
-  </div>
-  <div>
-    <Label for="state">State: </Label>
-    <input type="text">
-  </div>
-  <div>
-    <Label for="zipcode">Zipcode: </Label>
-    <input type="text">
-  </div>
-</form>
-
-<hr>
-
-<div>
-  Click here to say hello! `<button (click)="flashMessage()">hello!</button>`
-  <h4>`{{sayHello}}`<span class="badge">`{{visitors}}`</span></h4>
-</div>
-</h4>
-

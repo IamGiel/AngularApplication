@@ -23,6 +23,8 @@
   <div class="col-4">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{imageHappy1}}" alt="Card image cap">
+      <button href="#" class="btn btn-danger" (click)="normalize()" *ngIf="showBtnAnger">Angrify</button>
+      <button href="#" class="btn btn-primary" (click)="happify()" *ngIf="showBtn">Happify</button>
       <div class="card-body">
         <h5 class="card-title">{{player1}}</h5>
         <hr>
@@ -42,8 +44,7 @@
         <p>
           The `angrify` button will change the image. This is done with two-way binding [(ngModel)].
         </p>
-        <button href="#" class="btn btn-danger" (click)="normalize()" *ngIf="showBtnAnger">Angrify</button>
-        <button href="#" class="btn btn-primary" (click)="happify()" *ngIf="showBtn">Happify</button>
+
       </div>
     </div>
   </div>
@@ -51,6 +52,9 @@
   <div class="col-4">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{imageHappy2}}" alt="Card image cap">
+      <button href="#" class="btn btn-danger" (click)="normalize2()" *ngIf="showBtnAnger2">Angrify</button>
+      <button href="#" class="btn btn-primary" (click)="happify2()" *ngIf="showBtn2">Happify</button>
+
       <div class="card-body">
         <h5 class="card-title">{{player2}}</h5>
         <hr>
@@ -80,11 +84,6 @@
           The font color here, is changed using attribute binding [ngStyle]. SpongeBobs "funny" trait is changed to yellow using [ngClass]
           for bootstrap (text-warning).
         </p>
-
-
-
-        <button href="#" class="btn btn-danger" (click)="normalize2()" *ngIf="showBtnAnger2">Angrify</button>
-        <button href="#" class="btn btn-primary" (click)="happify2()" *ngIf="showBtn2">Happify</button>
       </div>
     </div>
   </div>
@@ -92,6 +91,9 @@
   <div class="col-4">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{imageHappy3}}" alt="Card image cap">
+      <button href="#" class="btn btn-danger" (click)="normalize3()" *ngIf="showBtnAnger3">Angrify</button>
+      <button href="#" class="btn btn-primary" (click)="happify3()" *ngIf="showBtn3">Happify</button>
+
       <div class="card-body">
         <h5 class="card-title">{{player3}}</h5>
         <hr>
@@ -111,8 +113,6 @@
           through javascript logic done in the component. `*ngFor="let var of vars"` where var is variable and vars = an
           array of values, allows for iterating through values in an array and dsiplaying it in the DOM.
         </p>
-        <button href="#" class="btn btn-danger" (click)="normalize3()" *ngIf="showBtnAnger3">Angrify</button>
-        <button href="#" class="btn btn-primary" (click)="happify3()" *ngIf="showBtn3">Happify</button>
       </div>
     </div>
   </div>
