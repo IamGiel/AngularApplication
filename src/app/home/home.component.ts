@@ -55,3 +55,13 @@ export class HomeComponent implements OnInit {
     this.itemCount = this.goals.length;
   }
 }
+
+//difference between node and angular = https://www.angularminds.com/blog/article/comparison-between-angularJS-vs-node-js.html
+//how to start an angular application = https://angular.io/guide/quickstart
+//what are primitive types and none primitive types
+//what is immutable and non immutable
+//whats the difference between mongo and mysql
+//whats the difference between root scope and scope
+//whats the difference between html4 and html5
+//why is jquery not used in Angular or React?
+//

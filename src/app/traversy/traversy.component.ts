@@ -23,7 +23,7 @@ export class TraversyComponent implements OnInit {
   ngOnInit() {
     console.log("ngOnInit is initialized, changed the name of John Doe to Gel");
     console.log("typescript strictly tells us of its `type`");
-    this.interpolation = "";
+    this.interpolation = "Gel";
     console.log("use javascript logic for getting age");
     this.age = this.age - 1984;
     this.email = "Lfagel84@gmail.com";
