@@ -2,6 +2,7 @@
   display: block;
   top: 19vh;
 }
+
 nav ul a,
 nav .brand-logo {
   color: white;
@@ -33,6 +34,17 @@ p {
 
 .parallax-container .section {
   width: 100%;
+}
+
+#lifeZoneLogo {
+  height: 25vh;
+  width: 50%;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  left: 96%;
+  top: 0vh;
 }
 
 @media only screen and (max-width: 992px) {
@@ -76,14 +88,15 @@ footer.page-footer {
   transform: translateX(-50%);
 }
 
-#lifeZoneLogo[_ngcontent-c1] {
+#lifeZoneLogo {
   height: 25vh;
   width: 50%;
   position: relative;
-  /* float: left; */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  left: 88%;
-  top: 0vh;
+  left: 100% !important;
+  top: -1vh !important;
 }
 
 // organization name
@@ -102,17 +115,17 @@ footer.page-footer {
   }
   #lifeZoneLogo {
     height: 30vh;
-    width: 130%;
+    width: 66%;
     position: relative;
     float: left;
     display: block;
-    left: 7%;
-    top: 2vh;
+    left: 31% !important;
+    top: -23vh !important;
   }
   .slogan {
     position: relative !important;
-    top: -26vh !important;
-    left: 76% !important;
+    top: -30vh !important;
+    left: 18% !important;
   }
 }
 
