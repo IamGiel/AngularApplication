@@ -121,3 +121,61 @@ footer.page-footer {
   right: auto;
   color: teal;
 }
+// about page styling
+#cardPhoto1 {
+  display: block !important;
+  height: 20% !important;
+}
+
+.card {
+  margin-left: 1% !important;
+}
+
+// on iphone6, shrink the cards
+@media only screen and (max-width: 667px) {
+  // row that holds all three cols
+  .row[_ngcontent-c1] {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    display: inline-block;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 42%;
+  } // logo
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 42%;
+  } //banner
+  .row .col.s3 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
+  .card[_ngcontent-c1] {
+    margin-left: 2% !important;
+    margin-right: 2%;
+  } //logo
+  #lifeZoneLogo {
+    height: 30vh;
+    width: 130%;
+    position: relative;
+    float: left;
+    display: block;
+    left: 9%;
+    top: 2vh;
+  } //logo container
+  nav .brand-logo {
+    left: 33% !important;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
