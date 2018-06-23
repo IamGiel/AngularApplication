@@ -8,10 +8,11 @@ import { HomeComponent } from "./home/home.component";
 
 import { DataService } from "./data.service";
 import { AboutComponent } from './about/about.component';
+import { EventsComponent } from './events/events.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, EventsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
