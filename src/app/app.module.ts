@@ -7,10 +7,11 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 
 import { DataService } from "./data.service";
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -58,6 +58,7 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
 .parallax-container .parallax img {
   opacity: 1;
   position: absolute;
@@ -81,11 +82,32 @@ footer.page-footer {
   left: 7%;
   top: 0vh;
 }
-//banner title /organization name
+
+// organization name
 .teal-text.text-lighten-2 {
   color: #085851 !important;
   font-size: 49px !important;
 }
+
+// organization name and logo on iphone 6
+@media only screen and (max-width: 667px) {
+  //banner
+  .teal-text.text-lighten-2 {
+    color: #085851 !important;
+    font-size: 49px !important;
+    visibility: hidden;
+  }
+  #lifeZoneLogo {
+    height: 30vh;
+    width: 130%;
+    position: relative;
+    float: left;
+    display: block;
+    left: 7%;
+    top: 2vh;
+  }
+}
+
 // font-color on the page
 .row .col.s12 {
   width: 100%;
