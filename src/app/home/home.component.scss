@@ -36,31 +36,10 @@ p {
   width: 100%;
 }
 
-#lifeZoneLogo[_ngcontent-c1] {
-  height: 25vh;
-  width: 50%;
-  position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  left: 84% !important;
-  top: -1vh !important;
-}
-
-@media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width: 667px) {
-  #index-banner .section {
-    top: 0;
-  }
+.slogan {
+  position: relative !important;
+  top: 17vh !important;
+  left: 5% !important;
 }
 
 .icon-block {
@@ -90,12 +69,12 @@ footer.page-footer {
 
 #lifeZoneLogo {
   height: 25vh;
-  width: 50%;
+  width: 63%;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  left: 100% !important;
+  left: 85% !important;
   top: -1vh !important;
 }
 
@@ -114,32 +93,64 @@ footer.page-footer {
   color: teal;
 }
 
-// organization name and logo on iphone 6
+// media queries
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
 @media only screen and (max-width: 667px) {
-  //banner
+  #index-banner .section {
+    top: 0;
+  } //banner
   .teal-text.text-lighten-2 {
     color: #085851 !important;
     font-size: 49px !important;
     visibility: hidden;
   }
-  #lifeZoneLogo {
-    height: 30vh;
-    width: 66%;
-    position: relative;
-    float: left;
-    display: block;
-    left: 31% !important;
-    top: -23vh !important;
-  }
   .slogan {
     position: relative !important;
-    top: -30vh !important;
-    left: 18% !important;
+    top: -1vh !important;
+    left: 19% !important;
   }
   .section {
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: relative;
     top: -21vh;
+  }
+  #lifeZoneLogo {
+    height: 25vh;
+    width: 63%;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    left: 21% !important;
+    top: -1vh !important;
+  } //contentblock
+  .contentBlock {
+    position: relative;
+    top: -4vh;
+  }
+  .section[_ngcontent-c1] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    top: -1vh;
+  }
+  .row {
+    width: 100%;
+    margin-left: 4%; //pushes each content on single rows
+    position: relative;
+    left: auto;
+    right: auto;
+    color: teal;
+    display: inline-block;
   }
 }
