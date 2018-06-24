@@ -39,6 +39,14 @@ image[_ngcontent-c1] img[_ngcontent-c1] {
 
 // on iphone6, shrink the cards
 @media only screen and (max-width: 667px) {
+  .row[_ngcontent-c1] .col.s3[_ngcontent-c1] {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    position: relative;
+    top: -25vh;
+  }
   // row that holds all three cols
   .row[_ngcontent-c1] {
     display: -ms-flexbox;
