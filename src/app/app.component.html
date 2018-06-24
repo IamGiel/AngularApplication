@@ -2,7 +2,7 @@
 <nav class="teal" role="navigation">
   <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo">
-        LifeZone Triangle
+      LifeZone Triangle
     </a>
     <ul class="right hide-on-med-and-down">
       <li>
@@ -24,17 +24,27 @@
         <a href="#">Navbar Link</a>
       </li>
     </ul>
-    <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger" (click)="toggle(thisList)">
       <i class="material-icons">menu</i>
     </a>
+    <!-- hide this, and show it on dropdown button click function -->
+    <ul [hidden]="true" #thisList>
+      <li>
+        <a routerLink="/">Home</a>
+      </li>
+      <li>
+        <a routerLink="/about">About</a>
+      </li>
+      <li>
+        <a routerLink="/events">Events</a>
+      </li>
+      <li>
+        <a routerLink="/traversy">Blogs</a>
+      </li>
+    </ul>
   </div>
 </nav>
 
 
 <!-- 👇🏼 this code here where the nav lives, to allow switching between routerLinks -->
 <router-outlet></router-outlet>
-
-
-
-
-

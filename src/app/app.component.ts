@@ -37,6 +37,10 @@ import {
 })
 export class AppComponent {
   title = "app";
+
+  toggle = thisList => {
+    thisList.hide = !thisList.hide;
+  };
 }
 
 
