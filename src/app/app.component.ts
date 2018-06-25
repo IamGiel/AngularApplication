@@ -37,9 +37,7 @@ import {
 })
 export class AppComponent {
 
-  hideShow = true;
-
-
+  hideShow = true;//set this as variable that is declared in the DOM, to manipulate property binding
   toggle() {
     this.hideShow = !this.hideShow;
   }
