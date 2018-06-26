@@ -25,7 +25,7 @@
   height: 41vh;
 }
 
-image[_ngcontent-c1] img[_ngcontent-c1] {
+image {
   display: block;
   border-radius: 2px 2px 0 0;
   position: relative;
@@ -39,26 +39,19 @@ image[_ngcontent-c1] img[_ngcontent-c1] {
 
 // on iphone6, shrink the cards
 @media only screen and (max-width: 667px) {
-  .row[_ngcontent-c1] .col.s3[_ngcontent-c1] {
-    width: 100%;
-    margin-left: auto;
-    left: auto;
-    right: auto;
+
+  .card .card-image {
     position: relative;
-    top: -25vh;
+    display: block;
+    width: 26em;
   }
-  // row that holds all three cols
-  .row[_ngcontent-c1] {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    /* flex-wrap: wrap; */
-    display: inline-block;
-    margin-right: -15px;
-    margin-left: -15px;
-    margin-top: 42%;
-  } // logo
+  #cardPhoto1[_ngcontent-c1] {
+    display: block !important;
+    height: 40vh !important;
+    width: 100%;
+  }
+
+
   .row {
     display: -ms-flexbox;
     display: flex;
@@ -67,21 +60,33 @@ image[_ngcontent-c1] img[_ngcontent-c1] {
     margin-right: -15px;
     margin-left: -15px;
     margin-top: 42%;
-  } //banner
-  .row .col.s3 {
-    width: 100%;
-    margin-left: auto;
-    left: auto;
-    right: auto;
   }
-  .card[_ngcontent-c1] {
+  .card {
     margin-left: 2% !important;
     margin-right: 2%;
+    height: 74vh;
   }
-   //logo container
   nav .brand-logo {
     left: 33% !important;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+  .card1 {
+    position: relative;
+    display: block;
+    top: 2vh;
+    left: 3%;
+  }
+  .cardContainer {
+    position: relative;
+    display: flex;
+    width: 93%;
+    margin: 3%;
+    top: -25vh;
+  }
+  .row .col.s3 {
+    position: relative;
+    display: block;
+    width: 100%;
   }
 }
