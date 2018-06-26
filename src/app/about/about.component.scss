@@ -40,9 +40,9 @@ image {
 // on iphone6, shrink the cards
 @media only screen and (max-width: 667px) {
   .card .card-image {
-    position: relative;
+    position: static;
     display: block;
-    width: 25em;
+    width: 24em;
   }
   #cardPhoto1[_ngcontent-c1] {
     display: block !important;
