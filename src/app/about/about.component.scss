@@ -39,19 +39,16 @@ image {
 
 // on iphone6, shrink the cards
 @media only screen and (max-width: 667px) {
-
   .card .card-image {
     position: relative;
     display: block;
-    width: 26em;
+    width: 25em;
   }
   #cardPhoto1[_ngcontent-c1] {
     display: block !important;
     height: 40vh !important;
     width: 100%;
   }
-
-
   .row {
     display: -ms-flexbox;
     display: flex;
@@ -64,7 +61,7 @@ image {
   .card {
     margin-left: 2% !important;
     margin-right: 2%;
-    height: 74vh;
+    height: 65vh;
   }
   nav .brand-logo {
     left: 33% !important;
