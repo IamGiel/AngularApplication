@@ -1,0 +1,15 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" id="submitProduct" (click)="onAdminForm()" [disabled]="!btnDisabled">Admin*</button>
+  <p>*Only admin can add events</p>
+  <div>{{' String '}} User no. {{ userId }} is status is now {{ getStatus() }}</div>
+  <div class="container-fluid adminForm" [hidden]="!hideForm" (mouseleave)="onMouseOut()">
+    <form>
+      <input type="text" placeholder="UserName" (input)="onInputName($event)">
+      <!-- gives access to events data -->
+      <input type="email" placeholder="email">
+      <input type="password" placeholder="Password">
+      <input type="password" placeholder="re-enter Password">
+    </form>
+  </div>
+
+</div>

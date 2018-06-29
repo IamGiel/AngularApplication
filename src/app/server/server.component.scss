@@ -1,0 +1,14 @@
+#submitProduct {}
+
+.adminForm {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  height: 40%;
+  border-color: green;
+  background-color: hsla(94, 37%, 4%, 0.568);
+  top: 28vh;
+  left: 26%;
+}

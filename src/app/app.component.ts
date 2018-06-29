@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -35,12 +35,17 @@ import {
     ])
   ]
 })
+
+
 export class AppComponent {
+
+
 
   hideShow = true;//set this as variable that is declared in the DOM, to manipulate property binding
   toggle() {
     this.hideShow = !this.hideShow;
   }
+
 }
 
 

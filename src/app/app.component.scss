@@ -1,4 +1,10 @@
-  // organization name and logo on iphone 6
+
+#appearDiv {
+  display:none;
+}
+
+
+// organization name and logo on iphone 6
   @media only screen and (max-width: 667px) {
     nav .brand-logo {
       position: absolute;
@@ -16,3 +22,5 @@
       z-index: 1;
     }
   }
+
+
