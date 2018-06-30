@@ -16,7 +16,7 @@ export class ServerComponent {
   constructor() {
     setTimeout(() => {
       this.btnDisabled = true;
-    }, 3000);
+    }, 1000);
   }
 
   //methods
