@@ -1,30 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-med-4">
-      <p [(ngModel)]="eventTitle">Title: {{ defaultTitle }}</p>
-      <br>
-      <p> Photo-Url:
-        <img [src]="photoUrl" alt="some photo">
-      </p>
-
-      <br>
-      <p [(ngModel)]="eventNote">Note: {{ defaultNote }}</p>
-
+      <button type="button" class="btn btn-primary" [disabled]="!btnDisabled" (click)="hideForm()">Admin*</button>
     </div>
   </div>
-
-  <button type="button" class="btn btn-primary" id="submitProduct" (click)="onAdminForm()" [disabled]="!btnDisabled">Admin*</button>
-  <p>*Only admin can add events</p>
-  <!-- this DIV FORM appears/hides -->
-  <div class="container-fluid adminForm" [hidden]="!hideForm" (mouseleave)="onMouseOut()">
-    <form>
-      <input type="text" placeholder="Title: (Make it Short)" (input)="onInputName($event)" maxlength="20">
-      <input type="text" placeholder="photo url" (input)="onInputPhoto($event)">
-      <input type="text" placeholder="note: (phrase the photo)" (input)="onInputNote($event)" maxlength="40">
-      <input type="password" placeholder="Password" (input)="onInputName($event)">
-      <input type="password" placeholder="re-enter Password" (input)="onInputName($event)">
-      <button type="submit" (click)="printEvent()">Submit</button>
-    </form>
+  <!-- form -->
+  <div class="container" [hidden]="adminForm">
+    <div class="row">
+      <div class="col-med-4">
+        <form class="form-inline">
+          <div class="form-group mb-2">
+            <label for="staticEmail2">Email</label>
+            <input type="email" placeholder="{{userEmail}}">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form>
+      </div>
+    </div>
   </div>
 
 </div>
