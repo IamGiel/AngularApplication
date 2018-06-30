@@ -1,14 +1,29 @@
 <div class="container">
+  <div class="row">
+    <div class="col-med-4">
+      <p [(ngModel)]="eventTitle">Title: {{ defaultTitle }}</p>
+      <br>
+      <p> Photo-Url:
+        <img [src]="photoUrl" alt="some photo">
+      </p>
+
+      <br>
+      <p [(ngModel)]="eventNote">Note: {{ defaultNote }}</p>
+
+    </div>
+  </div>
+
   <button type="button" class="btn btn-primary" id="submitProduct" (click)="onAdminForm()" [disabled]="!btnDisabled">Admin*</button>
   <p>*Only admin can add events</p>
-  <div>{{' String '}} User no. {{ userId }} is status is now {{ getStatus() }}</div>
+  <!-- this DIV FORM appears/hides -->
   <div class="container-fluid adminForm" [hidden]="!hideForm" (mouseleave)="onMouseOut()">
     <form>
-      <input type="text" placeholder="UserName" (input)="onInputName($event)">
-      <!-- gives access to events data -->
-      <input type="email" placeholder="email">
-      <input type="password" placeholder="Password">
-      <input type="password" placeholder="re-enter Password">
+      <input type="text" placeholder="Title: (Make it Short)" (input)="onInputName($event)" maxlength="20">
+      <input type="text" placeholder="photo url" (input)="onInputPhoto($event)">
+      <input type="text" placeholder="note: (phrase the photo)" (input)="onInputNote($event)" maxlength="40">
+      <input type="password" placeholder="Password" (input)="onInputName($event)">
+      <input type="password" placeholder="re-enter Password" (input)="onInputName($event)">
+      <button type="submit" (click)="printEvent()">Submit</button>
     </form>
   </div>
 
