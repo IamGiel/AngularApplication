@@ -10,8 +10,12 @@ import { EmailValidator } from "@angular/forms";
 export class ServerComponent {
   //properties here:
   btnDisabled: Boolean = false; // disable button using property binding
-  userEmail: string = "enter@email.com";
+  userEmail: string;
+  userPassword: any;
   adminForm: boolean = true;
+  //testing purpose
+  password: any = "Test1";
+  adminEmail: any = "LifeZoneAdmin1";
 
   constructor() {
     setTimeout(() => {
@@ -22,8 +26,35 @@ export class ServerComponent {
   //methods
 
   //hide admin form
-  hideForm(){
+  hideForm() {
     this.adminForm = !this.adminForm;
   }
 
+  //capture user input
+  userValue(event) {
+    this.userEmail = event.target.value;
+    console.log(this.userEmail);
+  }
+  passwordValue(event) {
+    this.userPassword = event.target.value;
+    console.log(this.userPassword);
+  }
+
+  //
+  validate() {
+    console.log(this.userPassword, " === ", this.password);
+    console.log(this.userEmail, " === ", this.adminEmail);
+    if (
+      this.userEmail === this.adminEmail &&
+      this.userPassword === this.password
+    ) {
+      this.userEmail = "";
+      this.userPassword = "";
+      this.adminForm = true;
+      return true;
+    } else {
+      alert("Uh oh! Check your inputs...");
+      return false;
+    }
+  }
 }
