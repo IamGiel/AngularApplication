@@ -3,10 +3,10 @@ import { Routes, RouterModule } from "@angular/router";
 
 // adding routes
 // adding the components
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { EventsComponent } from "./events/events.component";
-
+import { StatementOfFaithComponent } from "./statement-of-faith/statement-of-faith.component";
 
 //we use routes array and have a json of paths
 const routes: Routes = [
@@ -22,6 +22,10 @@ const routes: Routes = [
     path: "events",
     component: EventsComponent
   },
+  {
+    path: "statement-of-faith",
+    component: StatementOfFaithComponent
+  }
   // {
   //   path: "traversy",
   //   component: TraversyComponent

@@ -9,11 +9,12 @@ import { HomeComponent } from "./home/home.component";
 import { DataService } from "./data.service";
 import { AboutComponent } from './about/about.component';
 import { EventsComponent } from './events/events.component';
-import { ServerComponent } from './server/server.component'
+import { ServerComponent } from './server/server.component';
+import { StatementOfFaithComponent } from './statement-of-faith/statement-of-faith.component'
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, EventsComponent, ServerComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, EventsComponent, ServerComponent, StatementOfFaithComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
